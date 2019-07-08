@@ -9,6 +9,7 @@ Returns:
    obj: Reveresed Linked List
 """
 def reverse(linked_list):
+	# HINT: Create New Nodes 
 	pre_node = None
 	reversed_linked_list = LinkedList()
 
@@ -83,6 +84,6 @@ llist = LinkedList()
 for value in [4,2,5,1,-3,0]:
 	llist.append(value)
 
-flipped = reverse_linked_recursion(llist)
+flipped = reverse(llist)
 is_correct = list(flipped) == list([0,-3,1,5,2,4])
 print('Pass' if is_correct else 'Fail')
