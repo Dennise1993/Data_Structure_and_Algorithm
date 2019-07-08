@@ -3,6 +3,8 @@ from linked_list import Node
 """
 Reverse the inputted linked list
 
+Author: Zhijin Li (lizhijin1993@gmail.com)
+
 Args:
    linked_list(obj): Linked List to be reversed
 Returns:
