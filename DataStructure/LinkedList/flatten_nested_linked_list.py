@@ -35,6 +35,14 @@ Note, this implementation expects both linked lists to be sorted.
 """
 
 def merge(linked_list1, linked_list2):
+"""
+Takes in two linked lists and returns one sorted linked list
+Args:
+   linked_list1(obj): One of the two sorted linked lists 
+   linked_list2(obj): Same as above
+Returns:
+   obj: one sorted Linked List
+"""
 	if linked_list1 is None:
 		return linked_list2
 	if linked_list2 is None:
@@ -68,6 +76,7 @@ class NestedLinkedList(LinkedList):
     	if node.next is None:
     		return merge(node.value, None)
     	return merge(node.value, self._flatten(node.next))
+
 
 # TEST 
 nested_linked_list = NestedLinkedList(Node(linked_list))
