@@ -62,7 +62,7 @@ class LRU_Cache(object):
     	# if entry is the only element in the hashmap
     	if not pre_entry and not next_entry:
     		self.head = None 
-    		self.tail = head
+    		self.tail = self.head
     	# if entry is tail
     	if pre_entry and not next_entry:
     		pre_entry.next = None 
@@ -87,10 +87,10 @@ class LRU_Cache(object):
 
 our_cache = LRU_Cache(5)
 
-our_cache.set(1, 1);
-our_cache.set(2, 2);
-our_cache.set(3, 3);
-our_cache.set(4, 4);
+our_cache.set(1, 1)
+our_cache.set(2, 2)
+our_cache.set(3, 3)
+our_cache.set(4, 4)
 
 
 print(our_cache.get(1))      # returns 1
