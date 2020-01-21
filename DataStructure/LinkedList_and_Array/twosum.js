@@ -34,3 +34,22 @@ Space complexity : O(n). The extra space required depends on the number of items
 */
 
 console.log(twoSum([2, 7, 11, 15],9));
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum1 = function(nums, target) {
+    let map = new Map();
+    for(let i=0;i<nums.length;i++){
+        
+        let expectedKey = target - nums[i];
+        if(map.has(expectedKey)){
+            return [map.get(expectedKey), i];
+        }
+        map.set(nums[i], i);
+    }
+    
+}
+console.log(twoSum1([2, 7, 11, 15],9));

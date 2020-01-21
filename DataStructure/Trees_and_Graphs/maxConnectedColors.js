@@ -86,7 +86,6 @@ class Solution{
         let neighbors = board.getNegibourhoods(x,y);
         for(let neighbor of neighbors){
             count += this._findConnectedNum(board, neighbor[0], neighbor[1], color, seen);
-
         }
         return count;
     }

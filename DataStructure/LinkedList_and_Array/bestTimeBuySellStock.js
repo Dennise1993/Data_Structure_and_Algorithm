@@ -39,3 +39,20 @@ var maxProfit = function(prices) {
 
 console.log(maxProfit([7,6,4,3,1]));//0
 console.log(maxProfit([7,1,5,3,6,4]));//5
+
+console.log(lucrativeProfit([7,6,4,3,1]));//0
+console.log(lucrativeProfit([7,1,5,3,6,4]));//5
+
+function lucrativeProfit(prices){
+    if(prices.length<=1){
+        return 0;
+    }
+    let maxProfit= 0;
+    let minPrice = prices[0];
+    for(let i = 1; i < prices.length; i++){
+        let currentProgit = prices[i] - minPrice;
+        maxProfit = Math.max(currentProgit,maxProfit);
+        minPrice = Math.min(minPrice, prices[i]);
+    }
+    return maxProfit;
+}

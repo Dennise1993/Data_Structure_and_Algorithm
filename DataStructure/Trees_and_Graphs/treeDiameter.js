@@ -20,6 +20,8 @@ class Node{
         this.left = null;
     }
 }
+
+//Solution 1
 let diameter = 0;
 var diameterOfBinaryTree = function(root) {
     depth(root);
@@ -42,3 +44,21 @@ a.left =new Node(2);
 a.left.left = new Node(4);
 a.left.right = new Node(5);
 console.log(diameterOfBinaryTree(a)); // 3
+console.log(diameterTree(a)); // 3
+
+
+//Solution 2
+function diameterTree(root){
+    
+    return _diameterHelper(root)[1];
+}
+
+function _diameterHelper(root){
+    if(!root){
+        return [-1,0];
+    }
+    let [leftHeight, leftDiameter] = _diameterHelper(root.left);
+    let [rightHeight, rightDiameter] = _diameterHelper(root.right);
+
+    return [Math.max(leftHeight,rightHeight)+1, Math.max(leftDiameter,rightDiameter,leftHeight+rightHeight+2)];
+}
